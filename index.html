@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 魔方</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>3D 魔方</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>上层 (U)</h3>
+                <button onclick="cube.rotateLayer('U', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('U', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>下层 (D)</h3>
+                <button onclick="cube.rotateLayer('D', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('D', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>左层 (L)</h3>
+                <button onclick="cube.rotateLayer('L', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('L', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>右层 (R)</h3>
+                <button onclick="cube.rotateLayer('R', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('R', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>前层 (F)</h3>
+                <button onclick="cube.rotateLayer('F', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('F', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>后层 (B)</h3>
+                <button onclick="cube.rotateLayer('B', 'clockwise')">顺时针</button>
+                <button onclick="cube.rotateLayer('B', 'counterclockwise')">逆时针</button>
+            </div>
+            
+            <div class="reset-group">
+                <button onclick="cube.reset()" class="reset-btn">还原魔方</button>
+            </div>
+        </div>
+        
+        <div class="cube-container">
+            <div class="cube" id="cube">
+                <!-- 前面 (F) -->
+                <div class="face front">
+                    <div class="cubelet" data-position="F00"></div>
+                    <div class="cubelet" data-position="F01"></div>
+                    <div class="cubelet" data-position="F02"></div>
+                    <div class="cubelet" data-position="F10"></div>
+                    <div class="cubelet" data-position="F11"></div>
+                    <div class="cubelet" data-position="F12"></div>
+                    <div class="cubelet" data-position="F20"></div>
+                    <div class="cubelet" data-position="F21"></div>
+                    <div class="cubelet" data-position="F22"></div>
+                </div>
+                
+                <!-- 后面 (B) -->
+                <div class="face back">
+                    <div class="cubelet" data-position="B00"></div>
+                    <div class="cubelet" data-position="B01"></div>
+                    <div class="cubelet" data-position="B02"></div>
+                    <div class="cubelet" data-position="B10"></div>
+                    <div class="cubelet" data-position="B11"></div>
+                    <div class="cubelet" data-position="B12"></div>
+                    <div class="cubelet" data-position="B20"></div>
+                    <div class="cubelet" data-position="B21"></div>
+                    <div class="cubelet" data-position="B22"></div>
+                </div>
+                
+                <!-- 左面 (L) -->
+                <div class="face left">
+                    <div class="cubelet" data-position="L00"></div>
+                    <div class="cubelet" data-position="L01"></div>
+                    <div class="cubelet" data-position="L02"></div>
+                    <div class="cubelet" data-position="L10"></div>
+                    <div class="cubelet" data-position="L11"></div>
+                    <div class="cubelet" data-position="L12"></div>
+                    <div class="cubelet" data-position="L20"></div>
+                    <div class="cubelet" data-position="L21"></div>
+                    <div class="cubelet" data-position="L22"></div>
+                </div>
+                
+                <!-- 右面 (R) -->
+                <div class="face right">
+                    <div class="cubelet" data-position="R00"></div>
+                    <div class="cubelet" data-position="R01"></div>
+                    <div class="cubelet" data-position="R02"></div>
+                    <div class="cubelet" data-position="R10"></div>
+                    <div class="cubelet" data-position="R11"></div>
+                    <div class="cubelet" data-position="R12"></div>
+                    <div class="cubelet" data-position="R20"></div>
+                    <div class="cubelet" data-position="R21"></div>
+                    <div class="cubelet" data-position="R22"></div>
+                </div>
+                
+                <!-- 上面 (U) -->
+                <div class="face up">
+                    <div class="cubelet" data-position="U00"></div>
+                    <div class="cubelet" data-position="U01"></div>
+                    <div class="cubelet" data-position="U02"></div>
+                    <div class="cubelet" data-position="U10"></div>
+                    <div class="cubelet" data-position="U11"></div>
+                    <div class="cubelet" data-position="U12"></div>
+                    <div class="cubelet" data-position="U20"></div>
+                    <div class="cubelet" data-position="U21"></div>
+                    <div class="cubelet" data-position="U22"></div>
+                </div>
+                
+                <!-- 下面 (D) -->
+                <div class="face down">
+                    <div class="cubelet" data-position="D00"></div>
+                    <div class="cubelet" data-position="D01"></div>
+                    <div class="cubelet" data-position="D02"></div>
+                    <div class="cubelet" data-position="D10"></div>
+                    <div class="cubelet" data-position="D11"></div>
+                    <div class="cubelet" data-position="D12"></div>
+                    <div class="cubelet" data-position="D20"></div>
+                    <div class="cubelet" data-position="D21"></div>
+                    <div class="cubelet" data-position="D22"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
