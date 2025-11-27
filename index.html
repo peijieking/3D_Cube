@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D魔方展示与操作</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>3D魔方</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>面旋转</h3>
+                <div class="button-row">
+                    <button onclick="rotateFace('F', 1)">前面顺时针</button>
+                    <button onclick="rotateFace('F', -1)">前面逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateFace('B', 1)">后面顺时针</button>
+                    <button onclick="rotateFace('B', -1)">后面逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateFace('U', 1)">上面顺时针</button>
+                    <button onclick="rotateFace('U', -1)">上面逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateFace('D', 1)">下面顺时针</button>
+                    <button onclick="rotateFace('D', -1)">下面逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateFace('L', 1)">左面顺时针</button>
+                    <button onclick="rotateFace('L', -1)">左面逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateFace('R', 1)">右面顺时针</button>
+                    <button onclick="rotateFace('R', -1)">右面逆时针</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>层旋转</h3>
+                <div class="button-row">
+                    <button onclick="rotateLayer('M', 1)">中层顺时针</button>
+                    <button onclick="rotateLayer('M', -1)">中层逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateLayer('E', 1)">赤道层顺时针</button>
+                    <button onclick="rotateLayer('E', -1)">赤道层逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateLayer('S', 1)"> slices层顺时针</button>
+                    <button onclick="rotateLayer('S', -1)"> slices层逆时针</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>整体旋转</h3>
+                <div class="button-row">
+                    <button onclick="rotateCube('X', 1)">X轴顺时针</button>
+                    <button onclick="rotateCube('X', -1)">X轴逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateCube('Y', 1)">Y轴顺时针</button>
+                    <button onclick="rotateCube('Y', -1)">Y轴逆时针</button>
+                </div>
+                <div class="button-row">
+                    <button onclick="rotateCube('Z', 1)">Z轴顺时针</button>
+                    <button onclick="rotateCube('Z', -1)">Z轴逆时针</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <button class="reset-btn" onclick="resetCube()">还原魔方</button>
+            </div>
+        </div>
+        
+        <div class="cube-container">
+            <div id="cube" class="cube">
+                <!-- 魔方的27个小方块 -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
