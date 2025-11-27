@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 魔方展示与操作</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>3D 魔方</h1>
+        
+        <div class="main-content">
+            <div class="cube-container">
+                <div class="cube" id="cube">
+                    <!-- 魔方的六个面 -->
+                    <div class="face front">
+                        <div class="row">
+                            <div class="cubelet" data-face="front" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="front" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="front" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="front" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="front" data-row="1" data-col="1">F</div>
+                            <div class="cubelet" data-face="front" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="front" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="front" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="front" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="face back">
+                        <div class="row">
+                            <div class="cubelet" data-face="back" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="back" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="back" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="back" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="back" data-row="1" data-col="1">B</div>
+                            <div class="cubelet" data-face="back" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="back" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="back" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="back" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="face right">
+                        <div class="row">
+                            <div class="cubelet" data-face="right" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="right" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="right" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="right" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="right" data-row="1" data-col="1">R</div>
+                            <div class="cubelet" data-face="right" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="right" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="right" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="right" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="face left">
+                        <div class="row">
+                            <div class="cubelet" data-face="left" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="left" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="left" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="left" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="left" data-row="1" data-col="1">L</div>
+                            <div class="cubelet" data-face="left" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="left" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="left" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="left" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="face top">
+                        <div class="row">
+                            <div class="cubelet" data-face="top" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="top" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="top" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="top" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="top" data-row="1" data-col="1">U</div>
+                            <div class="cubelet" data-face="top" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="top" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="top" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="top" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="face bottom">
+                        <div class="row">
+                            <div class="cubelet" data-face="bottom" data-row="0" data-col="0"></div>
+                            <div class="cubelet" data-face="bottom" data-row="0" data-col="1"></div>
+                            <div class="cubelet" data-face="bottom" data-row="0" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="bottom" data-row="1" data-col="0"></div>
+                            <div class="cubelet" data-face="bottom" data-row="1" data-col="1">D</div>
+                            <div class="cubelet" data-face="bottom" data-row="1" data-col="2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="cubelet" data-face="bottom" data-row="2" data-col="0"></div>
+                            <div class="cubelet" data-face="bottom" data-row="2" data-col="1"></div>
+                            <div class="cubelet" data-face="bottom" data-row="2" data-col="2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+            <h2>控制按钮</h2>
+            
+            <div class="control-group">
+                <h3>前面 (F)</h3>
+                <button onclick="rotateFace('front', 'clockwise')">F</button>
+                <button onclick="rotateFace('front', 'counterclockwise')">F'</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>后面 (B)</h3>
+                <button onclick="rotateFace('back', 'clockwise')">B</button>
+                <button onclick="rotateFace('back', 'counterclockwise')">B'</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>右面 (R)</h3>
+                <button onclick="rotateFace('right', 'clockwise')">R</button>
+                <button onclick="rotateFace('right', 'counterclockwise')">R'</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>左面 (L)</h3>
+                <button onclick="rotateFace('left', 'clockwise')">L</button>
+                <button onclick="rotateFace('left', 'counterclockwise')">L'</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>顶面 (U)</h3>
+                <button onclick="rotateFace('top', 'clockwise')">U</button>
+                <button onclick="rotateFace('top', 'counterclockwise')">U'</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>底面 (D)</h3>
+                <button onclick="rotateFace('bottom', 'clockwise')">D</button>
+                <button onclick="rotateFace('bottom', 'counterclockwise')">D'</button>
+            </div>
+            
+            <div class="control-group">
+                <button onclick="resetCube()" class="reset-btn">还原魔方</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
